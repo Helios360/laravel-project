@@ -7,5 +7,5 @@ use App\Http\Controllers\ArticleController;
 Route::get('/', [IndexController::class, 'index'])->name('home');
 Route::get('/articles/{id}', [ArticleController::class, 'show'])->name('articles.details');
 Route::fallback(function(){
-    return response()->view('errors/not-found', [], 404);
+    return view('errors/not-found');
 });
