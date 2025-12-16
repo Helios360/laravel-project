@@ -1,4 +1,7 @@
 <div>
-    <!-- An unexamined life is not worth living. - Socrates -->
-     <h1>Page non trouvée</h1>
+    @extends('layouts.app')
+    @section('title', 'Accueil')
+    @section('content')
+        <h1>Page non trouvée</h1>
+    @endsection
 </div>
