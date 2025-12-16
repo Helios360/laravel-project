@@ -8,24 +8,13 @@ use Illuminate\View\Component;
 
 class Article extends Component
 {
-    public array $articles;
+    public string $titre;
+    public string $desc;
 
-    public function __construct()
+    public function __construct(string $titre, string $desc)
     {
-        $this->articles=[
-            [
-                "titre" => "L’IA soigne mieux",
-                "contenu" => "L’intelligence artificielle aide les médecins à diagnostiquer plus vite."
-            ],
-            [
-                "titre" => "Villes vertes",
-                "contenu" => "Les métropoles deviennent plus écologiques et durables."
-            ],
-            [
-                "titre" => "Télétravail",
-                "contenu" => "Plus de liberté, mais aussi plus de solitude."
-            ]
-        ];
+        $this->titre = $titre;
+        $this->desc = $desc;
     }
 
     public function render(): View
