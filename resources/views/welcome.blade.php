@@ -7,4 +7,14 @@
         <x-article titre="Villes vertes" desc="Les métropoles deviennent plus écologiques et durables." />
         <x-article titre="Télétravail" desc="Plus de liberté, mais aussi plus de solitude." />
     </div>
+
+    <h2>La version loop</h2>
+    <div style="display:flex; gap:1rem;">
+        @foreach($articles as $article)
+            <div>    
+                <h3>{{ $article['titre'] }}</h3>
+                <p>{{ $article['contenu'] }}</p>
+            </div>
+        @endforeach
+    </div>
 @endsection
