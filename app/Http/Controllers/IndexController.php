@@ -6,8 +6,6 @@ use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
-    public array $articles;
-
     public function index(){
         $articles=[
             [
