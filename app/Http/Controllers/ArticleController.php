@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Http\Request; 
+use Illuminate\View\View;
 
 class ArticleController extends Controller
 {
-    public function show($id): string{
-        return view('pages/article-details', ['id' => $id]);
+    public function show($id): View{
+        return view('pages.article-details', [
+            'id' => $id,
+            'title' => "Article $id"
+        ]);
     }
 }
