@@ -10,7 +10,9 @@
             @if($loop->last)
                 @break
             @endif
-            <x-article :article="$article"/>
+            <a href="{{route('articles.details', $article->id)}}" >
+                <x-article :article="$article"/>
+            </a>
         @endforeach
     </div>
     <hr>

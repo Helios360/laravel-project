@@ -9,10 +9,8 @@ use App\Models\Article;
 class ArticleController extends Controller
 {
     public function show($id): View{
-        $article = Article::findOrFail($id);
-        return view('pages.article-details', [
-            'article' => $article
-        ]);
+        $article = Article::findOrFail($id); // 404 automatique si inexistant ...
+        return view('pages.article-details', compact('article'));
     }
     public function create(){
         Article::insert([
@@ -35,22 +33,20 @@ class ArticleController extends Controller
                 'updated_at' => now(),
             ],
         ]);
-
         return redirect('/');
     }
     public function update(int $id){
         $article = Article::findOrFail($id);
-
         $article->update([
             'title' => $article->title,
             'description' => $article->description,
         ]);
-
         return redirect('/');
     }
     public function delete($id){
+        $article=Article::findOrFail($id); // 404 automatique si inexistant ...
         Article::destroy($id);
-        return redirect('/');
+        return redirect('/')->with('success', 'Article supprimé');
     }
 }
 
