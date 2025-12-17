@@ -45,7 +45,7 @@ class ArticleController extends Controller
     }
     public function delete($id){
         $article=Article::findOrFail($id); // 404 automatique si inexistant ...
-        Article::destroy($id);
+        $article->delete();
         return redirect('/')->with('success', 'Article supprimé');
     }
 }
