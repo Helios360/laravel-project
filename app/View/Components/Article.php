@@ -3,18 +3,17 @@
 namespace App\View\Components;
 
 use Closure;
+use App\Models\Article as ArticleModel;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
 class Article extends Component
 {
-    public string $titre;
-    public string $desc;
+    public ArticleModel $article;
 
-    public function __construct(string $titre, string $desc)
+    public function __construct(ArticleModel $article)
     {
-        $this->titre = $titre;
-        $this->desc = $desc;
+        $this->article = $article;
     }
 
     public function render(): View

@@ -1,4 +1,5 @@
 <div>
-    <h3>{{ $titre }}</h3>
-    <p>{{ Str::limit($desc, 30) }}</p>
+    <h3>{{ $article->title }}</h3>
+    <p>{{ Str::limit($article->description, 30) }}</p>
+    <a href="{{route('articles.details', $article->id)}}" ><u>More...</u></a>
 </div>
