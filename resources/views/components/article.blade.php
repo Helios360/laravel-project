@@ -1,4 +1,4 @@
 <div>
     <h3>{{ $titre }}</h3>
-    <p>{{ $desc }}</p>
+    <p>{{ Str::limit($desc, 30) }}...</p>
 </div>
